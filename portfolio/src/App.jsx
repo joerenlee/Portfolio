@@ -5,15 +5,25 @@ import Experience from './components/Experience';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Projects from './components/Projects';
+import AOS from 'aos';
+import "aos/dist/aos.css";
 import './index.scss';
 
 const App = () => {
 
     useEffect(() => {
+        AOS.init({
+            duration: 1200,
+            easing: 'ease-in-out'
+          });
+        AOS.refresh();
+    }, []);
+
+    useEffect(() => {
         let isScrolling = false;
 
         const handleScroll = (event) => {
-            if (isScrolling) return;
+            if (isScrolling || event.ctrlKey) return;
 
             event.preventDefault();
             isScrolling = true;
