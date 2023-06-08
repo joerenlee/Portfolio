@@ -2,7 +2,7 @@ import React from 'react'
 
 const Nav = () => {
   return (
-    <div>Nav</div>
+    <div className='page-section'>Nav</div>
   )
 }
 
